@@ -1,2 +1,53 @@
 # cedet
-Center/nucleus detection model selector algorithm.
+Center/nucleus detection model selector algorithm. Current user version: `v0.1.0`.
+
+## Getting Started
+
+1. Clone git repository: 
+  ```bash
+  git clone https://github.com/venkatachalamlab/cedet.git
+  ```  
+
+2. Checkout the current version:
+```bash
+git checkout v0.1.0
+```
+Use the following command to see what's new in the most recent tagged version:
+```bash
+git show v0.1.0
+```
+
+3. Make sure that following Python libraries are installed (prefer conda over pip):
+    - docopt
+    - h5py
+    - matplotlib
+    - numpy
+    - opencv
+    - pandas
+    - pathlib
+    - pytorch
+    - scipy
+    - scikit-image
+    - tqdm
+
+4. Install (development mode):
+  ```bash
+  (base) cedet> python setup.py develop
+  ```
+5. Train:
+  ```bash
+  train_cedet --dataset=. --model=<yourmodelname> [options]
+  ```
+6. Run:
+  ```bash
+  cedet --dataset=. --model=<yourmodelname> [options]
+  ```
+
+## Current default channels
+- `Richardson-Lucy Deconvolution`
+- `0-255 Look-up Table`
+- `Thresholding` (low=50, high=200)
+- `Sharpening` ([-3, 16, -3] kernel)
+
+## Currently available pretrained models
+- `celegans`: pan-neuronal fluorescence image of freely-moving *C. elegans* worms
