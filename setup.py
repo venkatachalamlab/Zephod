@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from cedet.__version__ import __version__
+from zephod.__version__ import __version__
 
 requirements = [
     'docopt',
@@ -16,15 +16,15 @@ requirements = [
 ]
 
 setup(
-    name='cedet',
+    name='zephod',
     version=__version__,
-    description='Center/nucleus detection model selector algorithm.',
+    description='Object/feature detection model selector algorithm.',
     author='James Yu, Vivek Venkatachalam',
     author_email='yu.hyo@northeastern.edu',
-    url='https://github.com/venkatachalamlab/cedet',
-    entry_points={'console_scripts': ['cedet=cedet.main:main',
-                                      'train_cedet=cedet.train:main']},
-    keywords=['object detection', 'center detection', 'nucleus detection'],
+    url='https://github.com/venkatachalamlab/zephod',
+    entry_points={'console_scripts': ['zephod=zephod.main:main',
+                                      'train_zephod=zephod.train:main']},
+    keywords=['object detection', 'feature detection'],
     # install_requires=requirements,
     packages=find_packages()
 )

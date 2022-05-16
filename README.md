@@ -1,11 +1,11 @@
-# cedet
-Center/nucleus detection model selector algorithm. Current user version: `v0.1.0`.
+# Zephod
+Object/feature detection model selector algorithm. Current user version: `v0.1.0`.
 
 ## Getting Started
 
 1. Clone git repository: 
   ```bash
-  git clone https://github.com/venkatachalamlab/cedet.git
+  git clone https://github.com/venkatachalamlab/zephod.git
   ```  
 
 2. Checkout the current version:
@@ -32,15 +32,15 @@ git show v0.1.0
 
 4. Install (development mode):
   ```bash
-  (base) cedet> python setup.py develop
+  (base) zephod> python setup.py develop
   ```
 5. Train:
   ```bash
-  train_cedet --dataset=. --model=<yourmodelname> [options]
+  train_zephod --dataset=. --model=<yourmodelname> [options]
   ```
 6. Run:
   ```bash
-  cedet --dataset=. --model=<yourmodelname> [options]
+  zephod --dataset=. --model=<yourmodelname> [options]
   ```
 
 ## Current default channels

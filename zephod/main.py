@@ -1,10 +1,10 @@
 """
-Cedet nucleus detection.
+Zephod feature detection.
 
 Usage:
-    cedet -h | --help
-    cedet -v | --version
-    cedet --dataset=<dataset> --model=<model> [options]
+    zephod -h | --help
+    zephod -v | --version
+    zephod --dataset=<dataset> --model=<model> [options]
 
 Options:
     -h --help                           show this message and exit.
@@ -21,18 +21,18 @@ from tqdm import tqdm
 
 from .__version__ import __version__
 from .getters import *
-from .model import Cedet
+from .model import Zephod
 from .utils import *
 
 
-def run_cedet(
+def run_zephod(
         dataset=Path('.'),
         dev=torch.device('cpu'),
         channel=None,
         model_kwargs=None,
         state_dict=None):
 
-    model = Cedet(**model_kwargs)
+    model = Zephod(**model_kwargs)
     model.load_state_dict(state_dict)
     model.to(dev)
     model.eval()
@@ -86,7 +86,7 @@ def run_cedet(
 
 
 def main():
-    args = docopt(__doc__, version=f'Cedet {__version__}')
+    args = docopt(__doc__, version=f'Zephod {__version__}')
     print(args, '\n')
 
     if torch.cuda.is_available() and args['--cuda'] in ['True', 'Y', 'y']:
@@ -108,7 +108,7 @@ def main():
         print('\n******* ERROR: model not found! Exiting...')
         exit()
 
-    run_cedet(
+    run_zephod(
         dataset=Path(args['--dataset']),
         dev=dev,
         channel=int(args['--channel']) if args['--channel'] else None,

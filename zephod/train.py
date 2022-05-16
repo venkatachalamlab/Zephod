@@ -1,10 +1,10 @@
 """
-Training Cedet nucleus detection network
+Training Zephod feature detection network
 
 Usage:
-    train_cedet -h | --help
-    train_cedet -v | --version
-    train_cedet --dataset=<dataset> --model=<model> [options]
+    train_zephod -h | --help
+    train_zephod -v | --version
+    train_zephod --dataset=<dataset> --model=<model> [options]
 
 Options:
     -h --help                           show this message and exit.
@@ -34,7 +34,7 @@ from tqdm import tqdm
 from .__version__ import __version__
 from .augment import generate_synthetic_data, identify
 from .getters import *
-from .model import Cedet
+from .model import Zephod
 from .utils import *
 
 
@@ -83,9 +83,9 @@ def train_model(
     all_isolates = []
     pbar = tqdm(
         range(len(t_note)),
-        desc='Finding isolated neurons',
+        desc='Finding isolated features',
         unit='frames',
-        postfix=f'Neurons={len(all_isolates)}'
+        postfix=f'Features={len(all_isolates)}'
     )
     for i in pbar:
         # for i in range(len(t_note)):
@@ -112,7 +112,7 @@ def train_model(
             'padding': 1,
             'pool_kernel': (2, 2, 2)
         }
-    model = Cedet(**model_kwargs).to(dev)
+    model = Zephod(**model_kwargs).to(dev)
     if state_dict is not None:
         print('Loading model from existing state_dict...')
         model.load_state_dict(state_dict)
@@ -201,7 +201,7 @@ def train_model(
 
 
 def main():
-    args = docopt(__doc__, version=f'Cedet {__version__}')
+    args = docopt(__doc__, version=f'Zephod {__version__}')
     print(args, '\n')
 
     if torch.cuda.is_available() and args['--cuda'] in ['True', 'Y', 'y']:

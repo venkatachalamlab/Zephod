@@ -7,7 +7,7 @@ from . import channels, utils
 from .utils import *
 
 
-class Cedet(nn.Module):
+class Zephod(nn.Module):
     def __init__(self,
                  img_shape=(17, 130, 420),
                  n_channels_in=6,
@@ -17,7 +17,7 @@ class Cedet(nn.Module):
                  padding=1,
                  pool_kernel=(2, 2, 2)):
 
-        super(Cedet, self).__init__()
+        super(Zephod, self).__init__()
 
         self.img_shape = img_shape
         self.n_channels_in = n_channels_in

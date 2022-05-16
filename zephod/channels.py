@@ -1,5 +1,5 @@
 """
-Cedet network uses all functions listed below as input channels to combine/select from.
+Zephod network uses all functions listed below as input channels to combine/select from.
 This file may be edited by a user to fit their particular use case,
 or to add new State-of-the-Art segmentation/detection algorithms,
 but each edit will require retraining of the weights.
