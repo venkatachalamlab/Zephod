@@ -1,5 +1,5 @@
-# Zephod
-Object/feature detection model selector algorithm. Current user version: `v0.1.0`.
+# ZephOD
+Object/feature detection model selector algorithm. Current user version: `v0.2.0`.
 
 ## Getting Started
 
@@ -10,11 +10,11 @@ Object/feature detection model selector algorithm. Current user version: `v0.1.0
 
 2. Checkout the current version:
 ```bash
-git checkout v0.1.0
+git checkout v0.2.0
 ```
 Use the following command to see what's new in the most recent tagged version:
 ```bash
-git show v0.1.0
+git show v0.2.0
 ```
 
 3. Make sure that following Python libraries are installed (prefer conda over pip):

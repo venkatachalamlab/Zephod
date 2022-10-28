@@ -6,4 +6,4 @@ import subprocess
 #     cwd=Path(__file__).parent.parent.absolute()
 # ).strip().decode('UTF-8')
 
-__version__ = 'v0.1.0'
+__version__ = 'v0.2.0'

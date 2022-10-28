@@ -23,6 +23,7 @@ setup(
     author_email='yu.hyo@northeastern.edu',
     url='https://github.com/venkatachalamlab/zephod',
     entry_points={'console_scripts': ['zephod=zephod.main:main',
+                                      'auto_annotate=zephod.auto_annotate:main',
                                       'train_zephod=zephod.train:main']},
     keywords=['object detection', 'feature detection'],
     # install_requires=requirements,
