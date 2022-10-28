@@ -7,7 +7,7 @@ from . import channels, utils
 from .utils import *
 
 
-class Zephod(nn.Module):
+class ZephOD(nn.Module):
     def __init__(self,
                  img_shape=(17, 130, 420),
                  n_channels_in=6,
@@ -17,7 +17,7 @@ class Zephod(nn.Module):
                  padding=1,
                  pool_kernel=(2, 2, 2)):
 
-        super(Zephod, self).__init__()
+        super(ZephOD, self).__init__()
 
         self.img_shape = img_shape
         self.n_channels_in = n_channels_in

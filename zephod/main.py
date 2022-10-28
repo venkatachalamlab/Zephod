@@ -1,5 +1,5 @@
 """
-Zephod feature detection.
+ZephOD feature detection.
 
 Usage:
     zephod -h | --help
@@ -21,7 +21,7 @@ from tqdm import tqdm
 
 from .__version__ import __version__
 from .getters import *
-from .model import Zephod
+from .model import ZephOD
 from .utils import *
 
 
@@ -32,7 +32,7 @@ def run_zephod(
         model_kwargs=None,
         state_dict=None):
 
-    model = Zephod(**model_kwargs)
+    model = ZephOD(**model_kwargs)
     model.load_state_dict(state_dict)
     model.to(dev)
     model.eval()
@@ -86,7 +86,7 @@ def run_zephod(
 
 
 def main():
-    args = docopt(__doc__, version=f'Zephod {__version__}')
+    args = docopt(__doc__, version=f'ZephOD {__version__}')
     print(args, '\n')
 
     if torch.cuda.is_available() and args['--cuda'] in ['True', 'Y', 'y']:
