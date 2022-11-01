@@ -132,4 +132,6 @@ dmypy.json
 *.xml
 *.iml
 .idea/*
-cedet/models/bin/*
+zephod/models/bin/*
+zephod/models/backup/*
+zephod/index.json

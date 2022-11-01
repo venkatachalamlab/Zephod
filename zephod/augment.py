@@ -52,11 +52,12 @@ def identify(vol, annotations, r_crop):
 def generate_synthetic_data(vol, annotations, isolates, preprocess=False, use_original=False):
     synthetic = np.zeros_like(vol)
     if use_original:
-        synthetic = vol.copy()
+        synthetic = vol.copy().astype(float)
 
     labels = np.zeros((1, *vol.shape[1:]))
     for n, annot in enumerate(annotations):
         x, y, z = get_pixel(annot, vol.shape[1:])
+        labels[:, z, y, x] = 1
 
         if not use_original:
             neuron = isolates[random.randint(0, len(isolates)-1)]
@@ -104,8 +105,6 @@ def generate_synthetic_data(vol, annotations, isolates, preprocess=False, use_or
                 ),
                 axis=0
             )
-
-        labels[:, z, y, x] = 1
 
     flip_idx = random.randint(-1, 2)
     if flip_idx < 2:
